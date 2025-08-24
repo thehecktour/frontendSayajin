@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import casalImg from './casal.jpeg'; // imagem dentro de src
 
 function App() {
   const [started, setStarted] = useState(false);
