@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.start-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.start-btn:hover {
+  background: #45a049;
+}
+
+.puzzle {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 2px;
+  margin: 20px auto;
+  background: #ddd;
+  width: max-content;
+}
+
+.piece {
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #dfffe0;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.popup-content h2 {
+  color: #2e7d32;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.setup {
+  margin-top: 20px;
+}
+
+.setup input {
+  padding: 8px;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 80px;
+  text-align: center;
+}
+
+.error {
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+.piece.selected {
+  border: 3px solid #4caf50;
+  box-shadow: 0 0 8px #4caf50;
+}
+
+.proposal {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fff8dc;
+  border: 2px solid #ff4081;
+}
+
+.proposal h3 {
+  color: #d81b60;
+  margin-bottom: 10px;
+}
+
+.proposal p {
+  font-size: 18px;
+  color: #444;
+}
