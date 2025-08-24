@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import './App.css'; // Certifique-se de ter seu CSS separado aqui
+import './App.css';
+import casalImg from './casal.jpeg'; // imagem dentro de src
 
 function App() {
   const [started, setStarted] = useState(false);
@@ -116,7 +117,7 @@ function App() {
               style={{
                 width: '100px',
                 height: '100px',
-                backgroundImage: `url('/casal.jpeg')`,
+                backgroundImage: `url(${casalImg})`,
                 backgroundSize: `${size * 100}px ${size * 100}px`,
                 backgroundPosition: `-${(piece % size) * 100}px -${Math.floor(piece / size) * 100}px`,
                 cursor: 'pointer',
