@@ -117,7 +117,7 @@ function App() {
               style={{
                 width: '100px',
                 height: '100px',
-                backgroundImage: `url(/images/casal.jpeg)`,
+                backgroundImage: `url(/image/casal.jpeg)`,
                 backgroundSize: `${size * 100}px ${size * 100}px`,
                 backgroundPosition: `-${(piece % size) * 100}px -${Math.floor(piece / size) * 100}px`,
                 cursor: 'pointer',
