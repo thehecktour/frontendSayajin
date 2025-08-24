@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './App.css'; // Certifique-se de ter seu CSS separado aqui
 
 function App() {
   const [started, setStarted] = useState(false);
@@ -53,6 +54,8 @@ function App() {
     setError('');
     setSize(num);
     setStarted(true);
+    setSolved(false);
+    setSelected(null);
   }
 
   function handlePieceClick(index: number) {
@@ -64,6 +67,16 @@ function App() {
       }
       setSelected(null);
     }
+  }
+
+  function handleRestart() {
+    setStarted(false);
+    setPieces([]);
+    setSize(0);
+    setInputValue('');
+    setError('');
+    setSelected(null);
+    setSolved(false);
   }
 
   return (
@@ -89,8 +102,11 @@ function App() {
         <div
           className="puzzle"
           style={{
+            display: 'grid',
             gridTemplateColumns: `repeat(${size}, 100px)`,
             gridTemplateRows: `repeat(${size}, 100px)`,
+            gap: '2px',
+            justifyContent: 'center',
           }}
         >
           {pieces.map((piece, index) => (
@@ -98,9 +114,13 @@ function App() {
               key={index}
               className={`piece ${selected === index ? 'selected' : ''}`}
               style={{
+                width: '100px',
+                height: '100px',
                 backgroundImage: `url('/casal.jpeg')`,
                 backgroundSize: `${size * 100}px ${size * 100}px`,
                 backgroundPosition: `-${(piece % size) * 100}px -${Math.floor(piece / size) * 100}px`,
+                cursor: 'pointer',
+                border: selected === index ? '2px solid #00f' : '1px solid #ccc',
               }}
               onClick={() => handlePieceClick(index)}
             ></div>
@@ -112,7 +132,9 @@ function App() {
         <div className="popup">
           <div className="popup-content">
             <h2>🎉 Você conseguiu!</h2>
-            <p>Assim como enfrentamos o desafio desse quebra cabeça juntos, quero enfrentar todos os problemas da vida junto com você! 💚</p>
+            <p>
+              Assim como enfrentamos o desafio desse quebra cabeça juntos, quero enfrentar todos os problemas da vida junto com você! 💚
+            </p>
 
             {size >= 4 && (
               <div className="proposal">
@@ -120,13 +142,12 @@ function App() {
                 <p>
                   Eu não enxergo um mundo em que eu esteja vivendo essa vida sem você.
                   Nos dias de caos e fraquezas mentais, estar ao seu lado é o que me ajuda a permanecer andando.
-                  Eu te amo e vou te amar para o resto da minha existência! 
-                  Quer casar comigo? ❤️
+                  Eu te amo e vou te amar para o resto da minha existência! Quer casar comigo? ❤️
                 </p>
               </div>
             )}
 
-            <button onClick={() => window.location.reload()}>Jogar novamente</button>
+            <button onClick={handleRestart}>Jogar novamente</button>
           </div>
         </div>
       )}
