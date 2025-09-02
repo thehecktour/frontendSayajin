@@ -142,7 +142,7 @@ function App() {
                 <p>
                   Eu não enxergo um mundo em que eu esteja vivendo essa vida sem você.
                   Nos dias de caos e fraquezas mentais, estar ao seu lado é o que me ajuda a permanecer andando.
-                  Eu te amo e vou te amar para o resto da minha existência! Quer casar comigo? ❤️
+                  Eu te amo e vou te amar para o resto da minha existência! Quer ser minha noiva? ❤️
                 </p>
               </div>
             )}
